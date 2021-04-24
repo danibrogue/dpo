@@ -1,7 +1,7 @@
 <?php
     try
     {
-        $connection = new PDO('pgsql:host=localhost;port=5435;user=postgres;dbname=task2_db');
+        $connection = new PDO('pgsql:host=localhost;port=5435;user=postgres;dbname=task2_db'); //поменять
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
     catch (PDOException $e)
@@ -31,6 +31,19 @@
     }
     function get_db()
     {
-        
+        global $connection;
+        $query = $connection->prepare('SELECT name, author,pagecount,country from books');
+        try
+        {
+            $query->execute();
+            $result=$query->fetchAll(PDO::FETCH_ASSOC);
+            $json_data = json_encode($result);
+            file_put_contents('output.json',$jsonString);
+        }
+        catch (PDOException $e)
+        {
+            echo $e->getMessage().PHP_EOL;
+        }
     }
+
 ?>
