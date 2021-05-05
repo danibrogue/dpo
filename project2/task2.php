@@ -1,7 +1,7 @@
 <?php
     try
     {
-        $connection = new PDO('pgsql:host=localhost;port=5435;user=postgres;dbname=task2_db'); //поменять
+        $connection = new PDO('pgsql:host=localhost;port=5432;user=postgres;dbname=task2_db');
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
     catch (PDOException $e)
@@ -45,5 +45,4 @@
             echo $e->getMessage().PHP_EOL;
         }
     }
-
 ?>
