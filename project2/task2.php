@@ -16,18 +16,17 @@
         {
             $query = $connection->prepare("INSERT INTO books (name, author, pagecount, country) 
                 VALUES ('$xml->name', '$xml->author', '$xml->pagecount','$xml->country')");
-            
+            try
+            {
+                $query->execute();
+                echo "Данные записаны".PHP_EOL;
+            }
+            catch(PDOException $e)
+            {
+                echo $e->getMessage().PHP_EOL;
+            }
         }
-        try
-        {
-            $query->execute();
-            echo "Данные записаны".PHP_EOL;
-        }
-        catch(PDOException $e)
-        {
-            echo $e->getMessage().PHP_EOL;
-        }
-        get_db();
+       get_db();
     }
     function get_db()
     {
@@ -36,9 +35,9 @@
         try
         {
             $query->execute();
-            $result=$query->fetchAll(PDO::FETCH_ASSOC);
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
             $json_data = json_encode($result);
-            file_put_contents('output.json',$jsonString);
+            file_put_contents('output.json',$json_data);
         }
         catch (PDOException $e)
         {
