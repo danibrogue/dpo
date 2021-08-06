@@ -66,7 +66,7 @@ function spam_filter() //возвращает кол-во минут до отп
             $mail->Host = 'smtp.gmail.com';                             //Настройка SMTP для отправки
             $mail->SMTPAuth = true;                                     //Включение аутетнтификатора SMTP
             $mail->Username = 'hotlinetheslayer@gmail.com';              //SMTP имя пользователя
-            $mail->Password = 'CutMyHair';                           //SMTP пароль
+            $mail->Password = '***********';                           //SMTP пароль
             $mail->SMTPSecure = \PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;    //Включение шифрования
             $mail->Port = 587;                                        //TCP  порт для подключения
             $mail->CharSet = 'UTF-8';
