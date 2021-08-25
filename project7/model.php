@@ -2,7 +2,7 @@
     function geo_object_query($geocode, $kind)
     {
         $http_parameters = [
-            'apikey' => '5f4d46a3-27ff-454c-86fc-f4268fc160c1',
+            'apikey' => 'api',
             'geocode' => $geocode,
             'format' => 'json'
         ];
