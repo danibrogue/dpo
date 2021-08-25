@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <link integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+        crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="ajax.js"></script>
+    </head>
+    <body>
+        <header class="header">
+            <wrapper>
+              <h2>Получение данных</h2>
+            </wrapper>
+        </header>
+        <main>
+            <wrapper>
+                <form id="formx" action="" method="post">
+                    <div class="fields">
+                        <input type="text" 
+                        id="input_address"
+                        name="input_address"
+                        placeholder="Введите адрес">
+                        <button type="button" id="send_form">Получить данные</button>
+                    </div>
+                </form>
+                <div class="result">
+                    <h4>Результат</h4>
+                    <div id="result_form">Пока здесь ничего не произошло.</div>
+                </div>
+            </wrapper>
+        </main>
+    </body>
+</html>
